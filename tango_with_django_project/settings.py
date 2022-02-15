@@ -32,6 +32,8 @@ ALLOWED_HOSTS = []
 
 # Application definition
 
+LOGIN_URL = 'rango:login'
+
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -40,6 +42,13 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rango',
+]
+
+PASSWORD_HASHERS = [
+'django.contrib.auth.hashers.BCryptSHA256PasswordHasher',
+'django.contrib.auth.hashers.BCryptPasswordHasher',
+'django.contrib.auth.hashers.PBKDF2PasswordHasher',
+'django.contrib.auth.hashers.PBKDF2SHA1PasswordHasher',
 ]
 
 MIDDLEWARE = [
